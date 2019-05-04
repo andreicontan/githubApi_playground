@@ -1,10 +1,9 @@
 package github.api;
 
-import static github.api.IssueProperties.AUTHORIZATION_HEADER;
-import static github.api.IssueProperties.URL;
 import static io.restassured.RestAssured.given;
 
 import io.restassured.http.Header;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Collection;
 import model.Issue;
@@ -21,8 +20,10 @@ public class ParameterizedIssueTests {
     @Parameterized.Parameter(1)
     public Integer statusCode;
 
-    private int issuesSize = 0;
-    private Header acceptHeader = new Header("Accept", "application/vnd.github.sailor-v-preview+json");
+    public String ACCESS_TOKEN = "2a31c0a32a4f4a975cbe8dbd9f4f51d82cb95db9";
+    int issuesSize = 0;
+    Header header = new Header("Authorization", "token " + ACCESS_TOKEN);
+    Header acceptHeader = new Header("Accept", "application/vnd.github.sailor-v-preview+json");
 
     @Parameterized.Parameters(name = "{index}: lock issue type {0} expect statusCode {1}")
     public static Collection<Object[]> inputData() {
@@ -34,24 +35,24 @@ public class ParameterizedIssueTests {
 
     @Before
     public void create_Issue_check_size() {
-        given().header(AUTHORIZATION_HEADER).body("{\"title\": \"Found a bug \"}")
+        given().header(header).body("{\"title\": \"Found a bug \"}")
 
-            .when().post(URL)
+            .when().post(IssueProperties.URL)
             .then().statusCode(201);
-        issuesSize = Arrays.asList(given()
-            .header(AUTHORIZATION_HEADER)
-            .when().get(URL)
-            .then().extract().body().as(Issue[].class)).size();
+        issuesSize = given()
+            .header(header)
+            .when().get(IssueProperties.URL)
+            .then().extract().jsonPath().getList("$").size();
     }
 
 
     @Test
     public void put_locks_check_different_topics() {
         String issueNumber = String.valueOf(issuesSize - 1);
-        given().header(AUTHORIZATION_HEADER)
+        given().header(header)
             .header(acceptHeader)
             .body("{\"lock_reason\": \"" + topic + "\"}")
-            .when().put(URL + issueNumber + "/lock")
+            .when().put(IssueProperties.URL +"/" +issueNumber + "/lock")
             .then().statusCode(statusCode);
     }
 
