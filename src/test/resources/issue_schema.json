@@ -1,0 +1,452 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "url",
+    "repository_url",
+    "labels_url",
+    "comments_url",
+    "events_url",
+    "html_url",
+    "id",
+    "node_id",
+    "number",
+    "title",
+    "user",
+    "labels",
+    "state",
+    "locked",
+    "assignee",
+    "assignees",
+    "milestone",
+    "comments",
+    "created_at",
+    "updated_at",
+    "closed_at",
+    "author_association",
+    "body",
+    "closed_by"
+  ],
+  "properties": {
+    "url": {
+      "$id": "#/properties/url",
+      "type": "string",
+      "title": "The Url Schema",
+      "default": "",
+      "examples": [
+        "https://api.github.com/repos/andreicontan/Selenium3Days/issues/1"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "repository_url": {
+      "$id": "#/properties/repository_url",
+      "type": "string",
+      "title": "The Repository_url Schema",
+      "default": "",
+      "examples": [
+        "https://api.github.com/repos/andreicontan/Selenium3Days"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "labels_url": {
+      "$id": "#/properties/labels_url",
+      "type": "string",
+      "title": "The Labels_url Schema",
+      "default": "",
+      "examples": [
+        "https://api.github.com/repos/andreicontan/Selenium3Days/issues/1/labels{/name}"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "comments_url": {
+      "$id": "#/properties/comments_url",
+      "type": "string",
+      "title": "The Comments_url Schema",
+      "default": "",
+      "examples": [
+        "https://api.github.com/repos/andreicontan/Selenium3Days/issues/1/comments"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "events_url": {
+      "$id": "#/properties/events_url",
+      "type": "string",
+      "title": "The Events_url Schema",
+      "default": "",
+      "examples": [
+        "https://api.github.com/repos/andreicontan/Selenium3Days/issues/1/events"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "html_url": {
+      "$id": "#/properties/html_url",
+      "type": "string",
+      "title": "The Html_url Schema",
+      "default": "",
+      "examples": [
+        "https://github.com/andreicontan/Selenium3Days/issues/1"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "id": {
+      "$id": "#/properties/id",
+      "type": "integer",
+      "title": "The Id Schema",
+      "default": 0,
+      "examples": [
+        440348825
+      ]
+    },
+    "node_id": {
+      "$id": "#/properties/node_id",
+      "type": "string",
+      "title": "The Node_id Schema",
+      "default": "",
+      "examples": [
+        "MDU6SXNzdWU0NDAzNDg4MjU="
+      ],
+      "pattern": "^(.*)$"
+    },
+    "number": {
+      "$id": "#/properties/number",
+      "type": "integer",
+      "title": "The Number Schema",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "title": {
+      "$id": "#/properties/title",
+      "type": "string",
+      "title": "The Title Schema",
+      "default": "",
+      "examples": [
+        "test"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "user": {
+      "$id": "#/properties/user",
+      "type": "object",
+      "title": "The User Schema",
+      "required": [
+        "login",
+        "id",
+        "node_id",
+        "avatar_url",
+        "gravatar_id",
+        "url",
+        "html_url",
+        "followers_url",
+        "following_url",
+        "gists_url",
+        "starred_url",
+        "subscriptions_url",
+        "organizations_url",
+        "repos_url",
+        "events_url",
+        "received_events_url",
+        "type",
+        "site_admin"
+      ],
+      "properties": {
+        "login": {
+          "$id": "#/properties/user/properties/login",
+          "type": "string",
+          "title": "The Login Schema",
+          "default": "",
+          "examples": [
+            "andreicontan"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "id": {
+          "$id": "#/properties/user/properties/id",
+          "type": "integer",
+          "title": "The Id Schema",
+          "default": 0,
+          "examples": [
+            3008121
+          ]
+        },
+        "node_id": {
+          "$id": "#/properties/user/properties/node_id",
+          "type": "string",
+          "title": "The Node_id Schema",
+          "default": "",
+          "examples": [
+            "MDQ6VXNlcjMwMDgxMjE="
+          ],
+          "pattern": "^(.*)$"
+        },
+        "avatar_url": {
+          "$id": "#/properties/user/properties/avatar_url",
+          "type": "string",
+          "title": "The Avatar_url Schema",
+          "default": "",
+          "examples": [
+            "https://avatars0.githubusercontent.com/u/3008121?v=4"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "gravatar_id": {
+          "$id": "#/properties/user/properties/gravatar_id",
+          "type": "string",
+          "title": "The Gravatar_id Schema",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^(.*)$"
+        },
+        "url": {
+          "$id": "#/properties/user/properties/url",
+          "type": "string",
+          "title": "The Url Schema",
+          "default": "",
+          "examples": [
+            "https://api.github.com/users/andreicontan"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "html_url": {
+          "$id": "#/properties/user/properties/html_url",
+          "type": "string",
+          "title": "The Html_url Schema",
+          "default": "",
+          "examples": [
+            "https://github.com/andreicontan"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "followers_url": {
+          "$id": "#/properties/user/properties/followers_url",
+          "type": "string",
+          "title": "The Followers_url Schema",
+          "default": "",
+          "examples": [
+            "https://api.github.com/users/andreicontan/followers"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "following_url": {
+          "$id": "#/properties/user/properties/following_url",
+          "type": "string",
+          "title": "The Following_url Schema",
+          "default": "",
+          "examples": [
+            "https://api.github.com/users/andreicontan/following{/other_user}"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "gists_url": {
+          "$id": "#/properties/user/properties/gists_url",
+          "type": "string",
+          "title": "The Gists_url Schema",
+          "default": "",
+          "examples": [
+            "https://api.github.com/users/andreicontan/gists{/gist_id}"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "starred_url": {
+          "$id": "#/properties/user/properties/starred_url",
+          "type": "string",
+          "title": "The Starred_url Schema",
+          "default": "",
+          "examples": [
+            "https://api.github.com/users/andreicontan/starred{/owner}{/repo}"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "subscriptions_url": {
+          "$id": "#/properties/user/properties/subscriptions_url",
+          "type": "string",
+          "title": "The Subscriptions_url Schema",
+          "default": "",
+          "examples": [
+            "https://api.github.com/users/andreicontan/subscriptions"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "organizations_url": {
+          "$id": "#/properties/user/properties/organizations_url",
+          "type": "string",
+          "title": "The Organizations_url Schema",
+          "default": "",
+          "examples": [
+            "https://api.github.com/users/andreicontan/orgs"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "repos_url": {
+          "$id": "#/properties/user/properties/repos_url",
+          "type": "string",
+          "title": "The Repos_url Schema",
+          "default": "",
+          "examples": [
+            "https://api.github.com/users/andreicontan/repos"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "events_url": {
+          "$id": "#/properties/user/properties/events_url",
+          "type": "string",
+          "title": "The Events_url Schema",
+          "default": "",
+          "examples": [
+            "https://api.github.com/users/andreicontan/events{/privacy}"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "received_events_url": {
+          "$id": "#/properties/user/properties/received_events_url",
+          "type": "string",
+          "title": "The Received_events_url Schema",
+          "default": "",
+          "examples": [
+            "https://api.github.com/users/andreicontan/received_events"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "type": {
+          "$id": "#/properties/user/properties/type",
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": [
+            "User"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "site_admin": {
+          "$id": "#/properties/user/properties/site_admin",
+          "type": "boolean",
+          "title": "The Site_admin Schema",
+          "default": false,
+          "examples": [
+            false
+          ]
+        }
+      }
+    },
+    "labels": {
+      "$id": "#/properties/labels",
+      "type": "array",
+      "title": "The Labels Schema"
+    },
+    "state": {
+      "$id": "#/properties/state",
+      "type": "string",
+      "title": "The State Schema",
+      "default": "",
+      "examples": [
+        "open"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "locked": {
+      "$id": "#/properties/locked",
+      "type": "boolean",
+      "title": "The Locked Schema",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "assignee": {
+      "$id": "#/properties/assignee",
+      "type": "null",
+      "title": "The Assignee Schema",
+      "default": null,
+      "examples": [
+        null
+      ]
+    },
+    "assignees": {
+      "$id": "#/properties/assignees",
+      "type": "array",
+      "title": "The Assignees Schema"
+    },
+    "milestone": {
+      "$id": "#/properties/milestone",
+      "type": "null",
+      "title": "The Milestone Schema",
+      "default": null,
+      "examples": [
+        null
+      ]
+    },
+    "comments": {
+      "$id": "#/properties/comments",
+      "type": "integer",
+      "title": "The Comments Schema",
+      "default": 0,
+      "examples": [
+        0
+      ]
+    },
+    "created_at": {
+      "$id": "#/properties/created_at",
+      "type": "string",
+      "title": "The Created_at Schema",
+      "default": "",
+      "examples": [
+        "2019-05-04T17:31:48Z"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "updated_at": {
+      "$id": "#/properties/updated_at",
+      "type": "string",
+      "title": "The Updated_at Schema",
+      "default": "",
+      "examples": [
+        "2019-05-04T17:31:48Z"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "closed_at": {
+      "$id": "#/properties/closed_at",
+      "type": "null",
+      "title": "The Closed_at Schema",
+      "default": null,
+      "examples": [
+        null
+      ]
+    },
+    "author_association": {
+      "$id": "#/properties/author_association",
+      "type": "string",
+      "title": "The Author_association Schema",
+      "default": "",
+      "examples": [
+        "OWNER"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "body": {
+      "$id": "#/properties/body",
+      "type": "string",
+      "title": "The Body Schema",
+      "default": "",
+      "examples": [
+        ""
+      ],
+      "pattern": "^(.*)$"
+    },
+    "closed_by": {
+      "$id": "#/properties/closed_by",
+      "type": "null",
+      "title": "The Closed_by Schema",
+      "default": null,
+      "examples": [
+        null
+      ]
+    }
+  }
+}
